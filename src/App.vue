@@ -1,14 +1,18 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
+
+  <MosaicLayout :images="images"/>
+
 </template>
 
 <script>
+import MosaicLayout from './components/MosaicLayout.vue'
 import * as helper from './helpers/loadInfo'
 
 export default {
   name: 'App',
-  components: {  }
-  ,
+  components: {
+    MosaicLayout,
+  }, 
   async mounted(){ 
     console.log('Mounted'); 
     await this.loadBaseImages(); 
@@ -23,7 +27,8 @@ export default {
       let qty = 7; 
       let res = await helper.loadImagesNew(qty);
       //* Add check for error 
-      this.images = res.data;       
+      this.images = res.data;    
+      console.log(this.images)   
     },
   }
 }
@@ -31,6 +36,11 @@ export default {
 
 
 <style>
+*{ 
+  margin: 0px;
+  padding: 0px;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

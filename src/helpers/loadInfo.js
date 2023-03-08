@@ -50,7 +50,6 @@ export async function loadImagesNew(qty){
         let url = "https://fakerapi.it/api/v1/images?_quantity="+ qty +"&_type=kittens"; 
         let res = await fetch(url); 
         res = await res.json();      
-        console.log(res);  
         res.data.forEach(el => {
             let temp = { 
                 name: el.title, 
