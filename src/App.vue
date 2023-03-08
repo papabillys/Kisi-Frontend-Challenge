@@ -26,9 +26,8 @@ export default {
     async loadBaseImages(){ 
       let qty = 7; 
       let res = await helper.loadImagesNew(qty);
-      //* Add check for error 
+      //* TODO: Add check for error and notifications
       this.images = res.data;    
-      console.log(this.images)   
     },
   }
 }
