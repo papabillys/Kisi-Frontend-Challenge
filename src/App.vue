@@ -1,18 +1,34 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import * as helper from './helpers/loadInfo'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  components: {  }
+  ,
+  async mounted(){ 
+    console.log('Mounted'); 
+    await this.loadBaseImages(); 
+  },  
+  data(){ 
+    return { 
+      images: [], 
+    }
+  },
+  methods: {
+    async loadBaseImages(){ 
+      let qty = 7; 
+      let res = await helper.loadImagesNew(qty);
+      //* Add check for error 
+      this.images = res.data;       
+    },
   }
 }
 </script>
+
 
 <style>
 #app {
