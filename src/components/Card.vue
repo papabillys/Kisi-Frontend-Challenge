@@ -78,21 +78,26 @@ import Icon from './Icon.vue'
   background-position: center;
   background-repeat: no-repeat;
 
-  border-radius: 25px;
+  border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  text-align: start;
 }
 
 .cardTitle{ 
-    border-radius: 25px;
+    border-radius: 5px;
     color: #FFFFFF;
     font-size: 14px;
     font-weight: bold;
-    margin: 10px ;
-    padding: 10px;
+    padding: 5px 0px 0px 5px;
 }
 .cardInfo{ 
+    border: 2px solid yellow;
+
     font-size: 10px;
     color: #FFFFFF;
+    padding: 5px 0px 0px 5px;
+    margin-right: 20px;
 }
 
 </style>
