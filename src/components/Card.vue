@@ -92,12 +92,22 @@ import Icon from './Icon.vue'
     padding: 5px 0px 0px 5px;
 }
 .cardInfo{ 
-    border: 2px solid yellow;
-
     font-size: 10px;
     color: #FFFFFF;
     padding: 5px 0px 0px 5px;
     margin-right: 20px;
+    margin-bottom: 10px;
+
+    /* white-space: nowrap;  */
+    /* overflow: hidden;  */
+    /* text-overflow: ellipsis;  */
+
+    display: -webkit-box;
+    max-width: 80%; 
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 </style>
