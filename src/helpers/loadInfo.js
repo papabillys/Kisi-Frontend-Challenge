@@ -12,46 +12,6 @@
 *I am using kittens as a theme, because a lot of other themes are from an API that is about to shut down and the images contain the watermark to inform us about that.
 */
 
-// keep 1 of 2 functions 
-export async function loadImages(botLimit, topLimit){ 
-
-    let result = {
-        data: [], 
-        errors: null
-    }; 
-
-    try { 
-        let total_ids = ""; 
-        for (let i=botLimit; i<=topLimit; i++){ 
-            total_ids = total_ids + i + ',' 
-        }
-        total_ids = total_ids.slice(0,-1); 
-
-        let url = "https://rickandmortyapi.com/api/character/" + total_ids; 
-        let res = await fetch(url); 
-        res = await res.json();      
-        console.log(res);  
-        res.forEach(el => {
-            let temp = { 
-                name: el.name, 
-                image: el.image, 
-                isHover: false, 
-                extra_data: { 
-                    status: el.status, 
-                    species: el.species, 
-                    gender: el.gender, 
-                    origin: el.origin.name 
-                }
-            }
-            result.data.push(temp); 
-        });    
-    }catch(err){ 
-        console.log(err); 
-        result.errors = err;   
-    }    
-    return result; 
-}
-
 export async function loadImagesNew(qty){ 
 
     // Init the return object 

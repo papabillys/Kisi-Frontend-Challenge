@@ -1,7 +1,11 @@
+<!-- 
+  App Components is the main screen/container. 
+  Loads MosaicLayout component with data as props an array of images. 
+  Images are loaded from loadInfo.js function which is called when App.vue is mounted. 
+ -->
+
 <template>
-
   <MosaicLayout :images="images"/>
-
 </template>
 
 <script>
@@ -24,8 +28,11 @@ export default {
   },
   methods: {
     async loadBaseImages(){ 
-      let qty = 7; 
+      
+      let qty = 7; // Set limit of the first images to load in the screen to 7
       let res = await helper.loadImagesNew(qty);
+
+      // Check if there was error on loading data 
       if (res.errors != null || res.data.length == 0){ 
         console.log(res.errors); 
         alert(`There was an error.\nPlease reload the page :)`)

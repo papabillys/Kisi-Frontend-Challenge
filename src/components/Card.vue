@@ -10,9 +10,8 @@
         -Style to dispay image or color based on if the image is hovered
         is applied with v-bind. 
         -Description is displayed with v-if  
+        -mouseOver and mouseLeave to keep track if the image is hovered or not
     -->
-
-    <!-- TODO: Make the component responsive -->
     <div 
         class="card"
         :style="
