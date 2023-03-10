@@ -3,6 +3,6 @@ module.exports = defineConfig({
   transpileDependencies: true, 
   lintOnSave: false,
   publicPath: process.env.NODE_ENV === 'production'
-    ? '/kisi-frontend-challenge/'
+    ? '/Kisi-Frontend-Challenge/'
     : '/'
 })
