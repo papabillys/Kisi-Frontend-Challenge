@@ -65,6 +65,9 @@ import Icon from './Icon.vue'
       
 <style scoped>
 
+
+/* ======================================== */
+/* Css rules for card component*/
 .card {
   height: 100%;
   width: 100%;
@@ -78,29 +81,31 @@ import Icon from './Icon.vue'
   background-repeat: no-repeat;
 
   border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
+  box-shadow: rgba(201, 203, 255, 0.35) 0px 5px 15px;
+  
   text-align: start;
+  color: #FFFFFF;
 }
+/* ======================================== */
 
+/* ======================================== */
+/* Css rules for card's title*/
 .cardTitle{ 
     border-radius: 5px;
-    color: #FFFFFF;
-    font-size: 14px;
     font-weight: bold;
     padding: 5px 0px 0px 5px;
 }
+/* ======================================== */
+
+/* ======================================== */
+/* Css rules for card's description that is displayed on hover*/
 .cardInfo{ 
     font-size: 10px;
-    color: #FFFFFF;
     padding: 5px 0px 0px 5px;
-    margin-right: 20px;
-    margin-bottom: 10px;
+    margin: 0px 20px 10px 0px;
 
-    /* white-space: nowrap;  */
-    /* overflow: hidden;  */
-    /* text-overflow: ellipsis;  */
-
+    /* These rules display description in max 2 lines and 
+    if there is more text it ends description with '...'  */
     display: -webkit-box;
     max-width: 80%; 
     -webkit-line-clamp: 2;
@@ -108,6 +113,20 @@ import Icon from './Icon.vue'
     overflow: hidden;
     text-overflow: ellipsis;
 }
+/* ======================================== */
 
-</style>
-      
+
+@media (min-width: 120px) {
+    /* Adjust font-size */
+    .cardTitle {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 640px) {
+    /* Adjust font-size */
+    .cardTitle {
+        font-size: 14px;
+    }
+}
+</style>      
